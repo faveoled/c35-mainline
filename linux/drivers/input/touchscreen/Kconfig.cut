@@ -1,0 +1,36 @@
+
+config TOUCHSCREEN_IMAGIS
+	tristate "Imagis touchscreen support"
+	depends on I2C
+	help
+	  Say Y here if you have an Imagis IST30xxC touchscreen.
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called imagis.
+
+config TOUCHSCREEN_NT36XXX_SPI
+	tristate "Novatek NT36XXX In-Cell SPI touchscreen controller"
+	depends on SPI_MASTER
+	select REGMAP
+        help
+          Say Y here if you have a Novatek NT36xxx series In-Cell
+          touchscreen connected to your system over SPI.
+
+          If unsure, say N.
+
+          To compile this driver as a module, choose M here: the
+          module will be called nt36xxx_ts_spi.
+
+config TOUCHSCREEN_IMX6UL_TSC
+	tristate "Freescale i.MX6UL touchscreen controller"
+	depends on ((OF && GPIOLIB) || COMPILE_TEST) && HAS_IOMEM
+	help
+	  Say Y here if you have a Freescale i.MX6UL, and want to
+	  use the internal touchscreen controller.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called imx6ul_tsc.
+

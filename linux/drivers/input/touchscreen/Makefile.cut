@@ -1,0 +1,4 @@
+obj-$(CONFIG_TOUCHSCREEN_NOVATEK_NVT_TS)	+= novatek-nvt-ts.o
+obj-$(CONFIG_TOUCHSCREEN_NT36XXX_SPI)	+= nt36xxx_spi_ts.o
+obj-$(CONFIG_TOUCHSCREEN_HP600)		+= hp680_ts_input.o
+
